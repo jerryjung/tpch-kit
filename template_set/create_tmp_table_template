@@ -1,0 +1,32 @@
+create external table q2_minimum_cost_supplier_tmp1 (s_acctbal double, s_name string, n_name string, p_partkey BIGINT, ps_supplycost double, p_mfgr string, s_address string, s_phone string, s_comment string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q2_minimum_cost_supplier_tmp1';
+create table q2_minimum_cost_supplier_tmp2 (p_partkey BIGINT, ps_min_supplycost double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q2_minimum_cost_supplier_tmp2';
+
+CREATE external TABLE q4_order_priority_tmp (O_ORDERKEY BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q4_order_priority_tmp';
+
+create external table q7_volume_shipping_tmp(supp_nation string, cust_nation string, s_nationkey BIGINT, c_nationkey BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q7_volume_shipping_tmp';
+
+create external table q11_part_tmp(ps_partkey BIGINT, part_value double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q11_part_tmp';
+create external table q11_sum_tmp(total_value double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q11_sum_tmp';
+
+create external table revenue(supplier_no BIGINT, total_revenue double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/revenue';
+create external table max_revenue(max_revenue double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/max_revenue';
+
+create external table q16_parts_supplier_relationship(p_brand string, p_type string, p_size BIGINT, supplier_cnt BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q16_parts_supplier_relationship';
+create external table q16_tmp(p_brand string, p_type string, p_size BIGINT, ps_suppkey BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q16_tmp';
+create external table supplier_tmp(s_suppkey BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/supplier_tmp';
+
+create external table lineitem_tmp(t_partkey BIGINT, t_avg_quantity double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/lineitem_tmp';
+
+create external table q18_tmp(l_orderkey BIGINT, t_sum_quantity double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q18_tmp';
+
+create external table q20_tmp1(p_partkey BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q20_tmp1';
+create external table q20_tmp2(l_partkey BIGINT, l_suppkey BIGINT, sum_quantity double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q20_tmp2';
+create external table q20_tmp3(ps_suppkey BIGINT, ps_availqty BIGINT, sum_quantity double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q20_tmp3';
+create external table q20_tmp4(ps_suppkey BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q20_tmp4';
+
+create external table q21_tmp1(l_orderkey BIGINT, count_suppkey BIGINT, max_suppkey BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q21_tmp1';
+create external table q21_tmp2(l_orderkey BIGINT, count_suppkey BIGINT, max_suppkey BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q21_tmp2';
+
+create external table q22_customer_tmp(c_acctbal double, c_custkey BIGINT, cntrycode string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q22_customer_tmp';
+create external table q22_customer_tmp1(avg_acctbal double) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q22_customer_tmp1';
+create external table q22_orders_tmp(o_custkey BIGINT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TEXTFILE LOCATION '/tpch_kit/q22_orders_tmp';

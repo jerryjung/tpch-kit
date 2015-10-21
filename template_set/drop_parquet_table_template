@@ -1,0 +1,8 @@
+drop table if exists p_supplier;
+drop table if exists p_lineitem;
+drop table if exists p_part;
+drop table if exists p_partsupp;
+drop table if exists p_customer;
+drop table if exists p_orders;
+drop table if exists p_nation;
+drop table if exists p_region;
